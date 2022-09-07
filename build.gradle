@@ -3,6 +3,22 @@ plugins {
     id 'com.android.application' version '7.2.2' apply false
     id 'com.android.library' version '7.2.2' apply false
     id 'org.jetbrains.kotlin.android' version '1.7.10' apply false
+    id "org.sonarqube" version "3.4.0.2513"
+    id "jacoco"
+}
+
+jacocoTestReport {
+    reports {
+        xml.enabled true
+    }
+}
+
+sonarqube {
+    properties {
+        property "sonar.projectKey", "PawanRoy1997_PDFConverter"
+        property "sonar.organization", "pawanroy1997"
+        property "sonar.host.url", "https://sonarcloud.io"
+    }
 }
 
 task clean(type: Delete) {
