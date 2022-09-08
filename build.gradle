@@ -2,6 +2,7 @@
 buildscript {
     dependencies {
         classpath "org.jacoco:org.jacoco.core:0.8.7"
+        classpath "org.sonarsource.scanner.gradle:sonarqube-gradle-plugin:3.4.0.2513"
     }
 }
 
