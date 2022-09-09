@@ -2,7 +2,8 @@ apply plugin: 'jacoco'
 
 tasks.withType(Test) {
     jacoco.includeNoLocationClasses = true
-    jacoco.excludes = ['jdk.internal.*'] // see related issue https://github.com/gradle/gradle/issues/5184#issuecomment-457865951
+    jacoco.excludes = ['jdk.internal.*']
+    // see related issue https://github.com/gradle/gradle/issues/5184#issuecomment-457865951
 }
 
 tasks.withType(Test) { jacoco.includeNoLocationClasses = true }
@@ -27,8 +28,8 @@ project.afterEvaluate {
             description = "Generate Jacoco coverage reports for the ${variantName.capitalize()} build"
 
             reports {
-                html.enabled = true
-                xml.enabled = true
+                html.setEnabled(true)
+                xml.setEnabled(true)
                 csv.enabled = false
             }
 
