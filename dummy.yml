@@ -37,8 +37,8 @@ jobs:
           
       # Create a temp directory
       - name: Create temp directory
-      - run: mkdir downloads
+        run: mkdir downloads
       
       # Put some file in it
       - name: Create temp file
-      - run: echo "It works!" >> downloads/temp.txt
+        run: echo "It works!" > downloads/temp.txt
