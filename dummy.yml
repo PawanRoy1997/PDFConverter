@@ -41,4 +41,13 @@ jobs:
       
       # Put some file in it
       - name: Create temp file
-        run: echo "It works!" > downloads/temp.txt
+        run: |
+          cd downloads
+          echo "It works!" > downloads/temp.txt
+          cd ..
+
+      - name: Upload the artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: downloads
+          path: downloads
