@@ -51,6 +51,10 @@ dependencies {
     implementation 'com.google.android.material:material:1.6.1'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
 
+//    Lottie
+    implementation "com.airbnb.android:lottie:5.2.0"
+
+//    Testing
     testImplementation 'junit:junit:4.13.2'
 
 //    Espresso
@@ -66,15 +70,15 @@ tasks.withType(Test) {
     jacoco.excludes = ['jdk.internal.*']
 }
 
-jacoco{
+jacoco {
     toolVersion "0.8.7"
 }
 
 task jacocoTestReport(type: JacocoReport, dependsOn: ['testDebugUnitTest', 'createDebugCoverageReport']) {
 
     reports {
-        xml.setEnabled(true)
-        html.setEnabled(true)
+        xml.enabled(true)
+        html.enabled(true)
     }
 
 
