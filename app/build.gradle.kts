@@ -1,7 +1,7 @@
 plugins {
-    kotlin("kapt")
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
+    kotlin("kapt")
     id("jacoco")
 //    id("plugins.jacoco-report")
 }
@@ -39,8 +39,7 @@ android {
         jvmTarget = "1.8"
     }
     jacoco {
-        buildToolsVersion = ("0.8.8")
-//        toolVersion = "0.8.5"
+        buildToolsVersion = ("30.0.3")
     }
 
     testOptions {
