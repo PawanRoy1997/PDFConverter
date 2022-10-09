@@ -13,4 +13,4 @@ dependencyResolutionManagement {
     }
 }
 rootProject.name = "PDFConverter"
-include ':app'
+include("app")

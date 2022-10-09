@@ -3,3 +3,6 @@
 
 Working on how to describe this! 😅
 This will be something awesome
+
+# Important documents
+ - [Project Standards](/documentation/ProjectStandards.md)
