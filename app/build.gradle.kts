@@ -1,3 +1,8 @@
+import plugins.BuildTypeRelease
+import plugins.BuildTypeDebug
+import plugins.RELEASE
+import plugins.DEBUG
+
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
@@ -20,21 +25,28 @@ android {
     }
 
     buildTypes {
-        release {
-            isMinifyEnabled = false
+        getByName(RELEASE) {
+            isMinifyEnabled = BuildTypeRelease.isMinifyEnabled
+            enableUnitTestCoverage = BuildTypeRelease.isTestCoverageEnabled
+            enableAndroidTestCoverage = BuildTypeRelease.isTestCoverageEnabled
+            applicationIdSuffix = BuildTypeRelease.applicationIdSuffix
+            versionNameSuffix = BuildTypeRelease.versionNameSuffix
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
         }
-        debug {
-            enableUnitTestCoverage = true
-            enableAndroidTestCoverage = true
+        getByName(DEBUG) {
+            isMinifyEnabled = BuildTypeDebug.isMinifyEnabled
+            enableUnitTestCoverage = BuildTypeDebug.isTestCoverageEnabled
+            enableAndroidTestCoverage = BuildTypeDebug.isTestCoverageEnabled
+            applicationIdSuffix = BuildTypeDebug.applicationIdSuffix
+            versionNameSuffix = BuildTypeDebug.versionNameSuffix
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = JavaVersion.VERSION_11
+        targetCompatibility = JavaVersion.VERSION_11
     }
     kotlinOptions {
         jvmTarget = "1.8"
@@ -47,6 +59,7 @@ android {
         unitTests.isIncludeAndroidResources = true
         unitTests.isReturnDefaultValues = true
     }
+    namespace = "com.freeware.pdfconverter"
 }
 
 dependencies {
