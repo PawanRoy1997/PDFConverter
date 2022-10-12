@@ -1,3 +1,5 @@
+import config.BuildConfig
+
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
@@ -7,16 +9,16 @@ plugins {
 }
 
 android {
-    compileSdk = 33
+    compileSdk = BuildConfig.COMPILE_SDK_VERSION
 
     defaultConfig {
-        applicationId = "com.freeware.pdfconverter"
-        minSdk = 26
-        targetSdk = 33
-        versionCode = 1
-        versionName = "1.0"
+        applicationId = BuildConfig.APPLICATION_ID
+        minSdk = BuildConfig.MIN_SDK_VERSION
+        targetSdk = BuildConfig.TARGET_SDK_VERSION
+        versionCode = BuildConfig.VERSION_CODE
+        versionName = BuildConfig.VERSION_NAME
 
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner = BuildConfig.INSTRUMENTATION_RUNNER
     }
 
     buildTypes {
