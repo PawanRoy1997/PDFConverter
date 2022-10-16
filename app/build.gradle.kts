@@ -1,4 +1,7 @@
 import config.BuildConfig
+import dependencies.AppDependencies
+import dependencies.CommonDependencies
+import dependencies.TestDependencies
 
 plugins {
     id("com.android.application")
@@ -64,24 +67,27 @@ kapt {
 
 dependencies {
 
-    implementation("androidx.core:core-ktx:1.9.0")
-    implementation("androidx.appcompat:appcompat:1.5.1")
-    implementation("com.google.android.material:material:1.6.1")
-    implementation("androidx.constraintlayout:constraintlayout:2.1.4")
+    implementation(AppDependencies.ANDROID_CORE)
+    implementation(AppDependencies.APP_COMPAT)
+    implementation(AppDependencies.MATERIAL)
+    implementation(AppDependencies.CONSTRAINT_LAYOUT)
+
+//    Timber for logging
+    implementation(CommonDependencies.TIMBER)
 
 //    Dependency Inject Hilt
-    implementation("com.google.dagger:hilt-android:2.44")
-    kapt("com.google.dagger:hilt-compiler:2.44")
+    implementation(AppDependencies.HILT)
+    kapt(AppDependencies.HILT_COMPILER)
 
 //    Lottie
-    implementation("com.airbnb.android:lottie:5.2.0")
+    implementation(CommonDependencies.LOTTIE)
 
 //    Testing
-    testImplementation("junit:junit:4.13.2")
+    testImplementation(TestDependencies.JUNIT)
 
 //    Espresso
-    androidTestImplementation("androidx.test.ext:junit:1.1.3")
-    androidTestImplementation("androidx.test.espresso:espresso-core:3.4.0")
-    androidTestImplementation("androidx.test:runner:1.4.0")
-    androidTestImplementation("androidx.test:rules:1.4.0")
+    androidTestImplementation(TestDependencies.JUNIT_EXT)
+    androidTestImplementation(TestDependencies.ESPRESSO_CORE)
+    androidTestImplementation(TestDependencies.RUNNER)
+    androidTestImplementation(TestDependencies.RULES)
 }
