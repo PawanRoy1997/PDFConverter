@@ -1,13 +1,17 @@
 package com.freeware.pdfconverter.activities
 
-import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
-import com.freeware.pdfconverter.R
+import android.annotation.SuppressLint
+import com.freeware.pdfconverter.databinding.ActivitySplashBinding
 
-class SplashActivity : AppCompatActivity() {
+@SuppressLint("CustomSplashScreen")
+class SplashActivity : BaseActivity<ActivitySplashBinding>() {
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_splash)
+    override fun initViews() {
+        binding.mainText.text = "Splash Screen"
+        supportActionBar?.hide()
+    }
+
+    override fun createViewBinding(): ActivitySplashBinding {
+        return ActivitySplashBinding.inflate(layoutInflater)
     }
 }

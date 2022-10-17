@@ -18,4 +18,5 @@ object Versions {
     const val ESPRESSO_CORE_VERSION = "3.4.0"
     const val RUNNER_VERSION = "1.4.0"
     const val RULES_VERSION = "1.4.0"
+    const val MOCKITO_VERSION = "2.19.0"
 }

@@ -1,6 +1,8 @@
 package dependencies
 
 object TestDependencies {
+    const val MOCKITO = "org.mockito:mockito-core:${Versions.MOCKITO_VERSION}"
+
 //    For Unit testing
     const val JUNIT = "junit:junit:${Versions.JUNIT_VERSION}"
 

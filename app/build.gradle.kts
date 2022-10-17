@@ -43,6 +43,9 @@ android {
             applicationIdSuffix = BuildTypeDebug.applicationIdSuffix
             versionNameSuffix = BuildTypeDebug.versionNameSuffix
         }
+        viewBinding {
+            enable = true
+        }
     }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
@@ -84,6 +87,7 @@ dependencies {
 
 //    Testing
     testImplementation(TestDependencies.JUNIT)
+    testImplementation(TestDependencies.MOCKITO)
 
 //    Espresso
     androidTestImplementation(TestDependencies.JUNIT_EXT)
