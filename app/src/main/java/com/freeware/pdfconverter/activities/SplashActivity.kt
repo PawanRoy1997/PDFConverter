@@ -7,7 +7,8 @@ import com.freeware.pdfconverter.databinding.ActivitySplashBinding
 class SplashActivity : BaseActivity<ActivitySplashBinding>() {
 
     override fun initViews() {
-        binding.mainText.text = javaClass.simpleName
+        binding.mainText.text = "Splash Screen"
+        supportActionBar?.hide()
     }
 
     override fun createViewBinding(): ActivitySplashBinding {
