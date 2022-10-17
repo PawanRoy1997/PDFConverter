@@ -87,6 +87,7 @@ dependencies {
 
 //    Testing
     testImplementation(TestDependencies.JUNIT)
+    testImplementation(TestDependencies.MOCKITO)
 
 //    Espresso
     androidTestImplementation(TestDependencies.JUNIT_EXT)
